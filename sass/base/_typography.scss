@@ -1,0 +1,123 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    width: 100%;
+    animation: moveInRight 1s ease-in;
+
+    @include respond(tab-land) {
+      letter-spacing: 0.5rem;
+    }
+
+    @include respond(tab-port) {
+      letter-spacing: 0.2rem;
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+  }
+
+  &--sub {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    animation: moveInLeft 1s ease-in;
+
+    @include respond(tab-land) {
+      letter-spacing: 0.2rem;
+    }
+
+    @include respond(tab-port) {
+      letter-spacing: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.1rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+.heading-secondary {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  background-image: linear-gradient(
+    to right,
+    rgb(100, 100, 219),
+    $color-tertiary
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+
+  @include respond(tab-land) {
+    font-size: 2.4rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 2rem;
+    text-align: center;
+  }
+  @include respond(phone) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+.heading-tertiary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+
+.heading-secondary-services {
+  padding-top: 5rem;
+}
+
+.container-packages {
+  &__heading {
+    font-size: 3rem;
+    padding-bottom: 3rem;
+    &:not(:first-child) {
+      padding-top: 5rem;
+    }
+
+    @include respond(tab-land) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+}

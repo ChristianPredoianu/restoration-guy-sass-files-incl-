@@ -1,0 +1,80 @@
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(
+      180deg,
+      rgba(14, 32, 203, 0.2) 0%,
+      rgba($color-dark-blue, 0) 100%
+    ),
+    url(./../assets/images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+
+  @include respond(phone) {
+    border-radius: 0;
+    height: 100vh;
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 2rem;
+    left: 3%;
+  }
+
+  &__logo {
+    height: 12rem;
+
+    @include respond(tab-land) {
+      height: 10rem;
+    }
+
+    @include respond(tab-port) {
+      height: 8rem;
+    }
+
+    @include respond(phone) {
+      height: 6rem;
+    }
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-light-gray;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    right: 25%;
+
+    @include respond(tab-land) {
+      width: 70%;
+      left: 15%;
+    }
+
+    @include respond(tab-port) {
+      width: 70%;
+      left: 15%;
+    }
+    @include respond(phone) {
+      top: 35%;
+      width: 70%;
+      left: 15%;
+      flex-direction: column;
+      align-items: center;
+      height: 25vh;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.composition {
+  position: relative;
+  width: 50%;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
+
+  &__photo {
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba($color-tertiary, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    outline-offset: 2rem;
+    transition: all 0.2s;
+
+    @include respond(tab-port) {
+      width: 40%;
+    }
+
+    &--p1 {
+      left: 2rem;
+      top: 2rem;
+
+      @include respond(tab-port) {
+        top: 1.6rem;
+        left: 10%;
+        transform: scale(0.8);
+      }
+    }
+    &--p2 {
+      right: 4rem;
+      top: 3.5rem;
+
+      @include respond(tab-port) {
+        top: 0;
+        left: 35%;
+        transform: scale(0.6);
+        z-index: 100;
+      }
+
+      @include respond(phone) {
+        top: 0.8rem;
+      }
+    }
+    &--p3 {
+      top: 12rem;
+      left: 20%;
+
+      @include respond(tab-port) {
+        top: 0;
+        left: 55%;
+        transform: scale(0.5);
+      }
+      @include respond(phone) {
+        top: 0.8rem;
+      }
+    }
+
+    &--p3:hover {
+      outline: 1rem solid $color-white;
+
+      @include respond(tab-port) {
+        outline: 0.3rem solid $color-white;
+      }
+    }
+    &--p1:hover {
+      outline: 1rem solid $color-black;
+
+      @include respond(tab-port) {
+        outline: 0.3rem solid $color-black;
+      }
+    }
+    &--p2:hover {
+      outline: 1rem solid $color-gray-dark;
+
+      @include respond(tab-port) {
+        outline: 0.3rem solid $color-gray-dark;
+      }
+    }
+    &:hover {
+      transform: scale(1.05) translateY(-1rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-tertiary, 0.5);
+      z-index: 200;
+
+      @include respond(tab-port) {
+        transform: scale(0.8) translateY(-1rem);
+      }
+    }
+  }
+}

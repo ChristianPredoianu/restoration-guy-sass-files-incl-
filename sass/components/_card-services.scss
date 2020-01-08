@@ -1,0 +1,346 @@
+.card {
+  //FUNCTIONALUTY
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  width: 35rem;
+  margin: 1rem 1rem;
+
+  &__side {
+    height: 90rem;
+
+    @include respond(tab-land) {
+      height: 120rem;
+    }
+
+    transition: all 0.8s ease;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-bronze,
+          $color-gray-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-silver,
+          $color-gray-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-gold,
+          $color-gray-dark
+        );
+      }
+      &-4 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-silver
+        );
+      }
+      &-5 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        );
+      }
+      &-6 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-light-blue
+        );
+      }
+      &-7 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-dark-blue
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+    @include respond(tab-land) {
+      transform: none;
+    }
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+    @include respond(tab-land) {
+      transform: rotateY(180deg);
+    }
+  }
+
+  //FRONt SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+    position: relative;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-bronze,
+          $color-black
+        ),
+        url(../assets/images/bmw-gold.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/bmw-gold.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-silver,
+          $color-black
+        ),
+        url(../assets/images/porsche-platinum.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/porsche-platinum.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-gold,
+          $color-black
+        ),
+        url(../assets/images/mercedes-gold.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/mercedes-gold.jpg);
+    }
+
+    &--4 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/car-silver.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/car-silver.jpg);
+    }
+
+    &--5 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/bmw3.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/bmw3.jpg);
+    }
+
+    &--6 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/mercedes6.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/mercedes6.jpg);
+    }
+
+    &--7 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/bmw4.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/bmw4.jpg);
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    top: 22%;
+    right: 10%;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: $color-primary;
+
+    @include respond(tab-land) {
+      top: 17%;
+    }
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-bronze, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-silver, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-gold, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
+
+    &--4 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-platinum, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
+
+    &--5 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-platinum, 0.85),
+        rgba($color-black, 0.85)
+      );
+    }
+
+    &--6 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-platinum, 0.85),
+        rgba($color-light-blue, 0.85)
+      );
+    }
+
+    &--7 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-platinum, 0.85),
+        rgba($color-dark-blue, 0.85)
+      );
+    }
+  }
+
+  &__heading-text {
+    right: 50%;
+    width: 100%;
+
+    &--1 {
+      position: absolute;
+      right: 50%;
+      width: 100%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10rem;
+    height: 73%;
+    &-heading {
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin-bottom: 1rem;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-secondary;
+        }
+      }
+    }
+
+    &-cta {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      display: none;
+
+      @include respond(tab-land) {
+        display: flex;
+        height: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  //BACK SIDE STYLING
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__price-box {
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+  }
+
+  &__variation-desc {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,23 @@
+.bg-video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: opacity(90%) grayscale(50%);
+  z-index: -1;
+
+  &__content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    //"Hack" fallback for Edge
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

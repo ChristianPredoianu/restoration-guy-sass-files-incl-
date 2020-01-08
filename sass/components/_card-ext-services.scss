@@ -1,0 +1,213 @@
+.ext-card {
+  //FUNCTIONALITY
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  color: black;
+  width: 35rem;
+
+  &__side {
+    height: 65rem;
+    transition: all 0.8s ease;
+    width: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    @include respond(tab-land) {
+      height: 90rem;
+    }
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-dark-blue,
+        $color-light-blue
+      );
+    }
+  }
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+    @include respond(tab-land) {
+      transform: none;
+    }
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+    @include respond(tab-land) {
+      transform: rotateY(180deg);
+    }
+  }
+
+  //FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 94%, 0 75%, 0 0);
+    position: relative;
+
+    &--1 {
+      background-image: url(../assets/images/range-rover.jpg);
+    }
+
+    &--2 {
+      background-image: url(../assets/images/tesla.jpg);
+    }
+    &--3 {
+      background-image: url(../assets/images/bmw-silver.jpg);
+    }
+    &--4 {
+      background-image: url(../assets/images/mini.jpg);
+    }
+  }
+
+  &__heading {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: $color-secondary;
+    letter-spacing: 2px;
+  }
+  &__heading-desc {
+    background: linear-gradient(
+      63deg,
+      rgba(74, 78, 84, 1) 0%,
+      rgba(120, 120, 124, 1) 48%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    width: 50%;
+    height: 20%;
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 26%;
+    left: 0;
+
+    @include respond(tab-land) {
+      top: 19%;
+      height: 20%;
+    }
+    &--2 {
+      margin-bottom: 2rem;
+    }
+  }
+  &__heading-price {
+    background: linear-gradient(
+      63deg,
+      rgba(116, 124, 134, 1) 0%,
+      rgba(164, 165, 170, 1) 48%,
+      rgba(48, 47, 50, 1) 100%
+    );
+    width: 50%;
+    height: 20%;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+    position: absolute;
+    top: 26%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    @include respond(tab-land) {
+      top: 19%;
+      height: 20%;
+    }
+
+    &--2 {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+  }
+  &__details {
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+  }
+  &__paragraph {
+    color: $color-primary;
+    text-align: center;
+    margin-top: 15rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+    @include respond(tab-land) {
+      display: block;
+      margin-top: 16rem;
+    }
+  }
+
+  &__details-cta {
+    text-align: center;
+    display: none;
+
+    &-price-only {
+      font-size: 1.8rem;
+      padding: 0 2rem;
+    }
+
+    &-price-value {
+      font-size: 6rem;
+    }
+
+    &-price-save {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: $color-red;
+    }
+
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: column;
+      justify-self: flex-end;
+      align-items: center;
+      position: absolute;
+      top: 69%;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  //BACK SIDE STYLING
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+  }
+
+  &__price-box {
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  &__price-save {
+    font-size: 1.8rem;
+    color: $color-red;
+  }
+}
