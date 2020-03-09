@@ -1,0 +1,21 @@
+.header-cookie {
+  position: relative;
+  height: 20vh;
+  background-color: $color-black;
+
+  @include respond(tab-port) {
+    height: 30vh;
+  }
+}
+.container-policy {
+  @include flexColHorVer(flex, column, center, center);
+  padding: 10rem;
+  margin-top: 10rem;
+
+  @include respond(tab-land) {
+    margin-top: 0;
+  }
+  @include respond(phone) {
+    padding: 4rem;
+  }
+}

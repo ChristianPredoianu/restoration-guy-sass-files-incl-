@@ -1,0 +1,76 @@
+.nav {
+  height: 20vh;
+  @include respond(tab-land) {
+    position: relative;
+    height: 10vh;
+  }
+
+  &__hamburger {
+    position: fixed;
+    cursor: pointer;
+    right: 5%;
+    top: 8rem;
+    transform: translate(-5%, -50%);
+    display: block;
+    z-index: 8;
+
+    @include respond(tab-land) {
+      top: 6.5rem;
+    }
+
+    @include respond(tab-port) {
+      top: 5rem;
+    }
+
+    @include respond(phone) {
+      top: 5rem;
+    }
+
+    .line {
+      width: 3rem;
+      height: 3px;
+      background: $color-light-blue;
+      margin: 5px;
+    }
+  }
+
+  &__nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    position: fixed;
+    background: $color-dark-blue;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    clip-path: circle(10rem at 90% -35%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    z-index: 5;
+
+    li a {
+      color: $color-light-gray;
+      text-decoration: none;
+      font-size: 2.5rem;
+    }
+
+    li a:hover {
+      color: $color-secondary;
+      transition: all 1s ease;
+    }
+    li:hover {
+      transform: scale(1.2);
+      transition: all 0.2s ease-in-out;
+
+      @include respond(phone) {
+        transform: none;
+      }
+    }
+
+    &.open {
+      clip-path: circle(250rem at 90% -10%);
+      pointer-events: all;
+    }
+  }
+}

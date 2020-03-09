@@ -1,19 +1,22 @@
-@import "abstracts/fonts";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/fonts';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "layouts/header";
-@import "layouts/footer";
+@import 'layouts/navbar';
+@import 'layouts/headers';
+@import 'layouts/footer';
 
-@import "components/button";
-@import "components/composition";
-@import "components/card-services";
-@import "components/bg-video";
-@import "components/card-ext-services";
+@import 'components/button';
+@import 'components/composition';
+@import 'components/card-services';
+@import 'components/bg-video';
+@import 'components/card-ext-services';
 
-@import "pages/home";
+@import 'pages/home';
+@import 'pages/ceramic';
+@import 'pages/cookiepolicy';

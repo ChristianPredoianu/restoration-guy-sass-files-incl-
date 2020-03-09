@@ -1,39 +1,9 @@
-// ARROW UP
-const arrowUp = document.getElementById('nav-up-cta');
-// Add event listener
-arrowUp.addEventListener('click', topFunction);
-
 const navLinks = document.querySelector('.nav__nav-links');
 //HAMBURGER
 const hamburger = document.querySelector('.nav__hamburger');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
-
-// On click scroll to top of document
-function topFunction() {
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
-}
-
-//On click scroll to services section
-function scrollToServices() {
-  var elmnt = document.getElementById('services');
-  elmnt.scrollIntoView({
-    behavior: 'smooth'
-  });
-}
-
-//On click scroll to packages section
-function scrollToPackages() {
-  var elmnt = document.getElementById('packages');
-  elmnt.scrollIntoView({
-    behavior: 'smooth'
-  });
-}
 
 AOS.init({
   // Global settings:

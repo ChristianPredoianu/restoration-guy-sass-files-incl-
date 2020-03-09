@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.7;
 }
@@ -7,18 +7,15 @@ body {
 .heading-primary {
   text-transform: uppercase;
   margin-bottom: 6rem;
+  filter: drop-shadow(0.5rem 0.5rem 0.6rem rgb(184, 183, 183));
 
   &--main {
-    display: flex;
-    justify-content: center;
-    font-size: 3rem;
-    font-weight: 400;
-    letter-spacing: 1rem;
-    width: 100%;
-    animation: moveInRight 1s ease-in;
+    @include headingMain();
+    text-align: center;
 
     @include respond(tab-land) {
       letter-spacing: 0.5rem;
+      font-size: 4rem;
     }
 
     @include respond(tab-port) {
@@ -27,7 +24,7 @@ body {
     }
 
     @include respond(phone) {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       letter-spacing: 0;
     }
   }
@@ -35,7 +32,7 @@ body {
   &--sub {
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 400;
     letter-spacing: 1rem;
     animation: moveInLeft 1s ease-in;
@@ -52,6 +49,27 @@ body {
     @include respond(phone) {
       font-size: 1.1rem;
       letter-spacing: 0.2rem;
+    }
+  }
+}
+
+.heading-ceramic {
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  filter: drop-shadow(0.5rem 0.5rem 0.9rem rgb(202, 202, 202));
+
+  &--main {
+    @include headingMain();
+    text-align: center;
+
+    @include respond(tab-port) {
+      margin-top: 10rem;
+      font-size: 4rem;
+    }
+
+    @include respond(phone) {
+      margin-top: 10rem;
+      font-size: 3rem;
     }
   }
 }
@@ -118,6 +136,133 @@ body {
 
     @include respond(phone) {
       font-size: 1.5rem;
+    }
+  }
+}
+
+.services-desc {
+  &__heading {
+    font-size: 4rem;
+    padding: 5rem 0 5rem 0;
+
+    @include respond(phone) {
+      font-size: 2rem;
+      padding: 0rem 0 3rem 0;
+    }
+  }
+}
+
+/*---------------------------------------------------ceramic.html------------------------------------------------------------------*/
+
+.checkbox {
+  &__paragraph {
+    font-size: 2rem;
+    margin-top: 2rem;
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 1.2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+  }
+}
+
+.ceramic-description {
+  &__heading {
+    font-size: 5rem;
+    padding-bottom: 1.5rem;
+
+    @include respond(tab-land) {
+      font-size: 3rem;
+      padding: 0 10rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+  }
+
+  &__paragraph {
+    font-size: 3rem;
+    padding: 0 10rem;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+      padding: 3rem 10rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+      padding: 0 5rem;
+      text-align: center;
+    }
+  }
+  &__paragraph:not(:last-child) {
+    padding-bottom: 15rem;
+
+    @include respond(tab-land) {
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+.product {
+  &__paragraph {
+    font-size: 2.5rem;
+  }
+}
+
+/* --------------------------cookiepolicy.html----------------------*/
+.header-cookie {
+  &__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: $color-white;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.container-policy {
+  &__heading {
+    font-size: 5rem;
+    text-align: center;
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+    margin-top: 5rem;
+    text-align: center;
+    @include respond(phone) {
     }
   }
 }

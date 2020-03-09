@@ -1,5 +1,5 @@
 .card {
-  //FUNCTIONALUTY
+  //FUNCTIONALiTY
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
@@ -79,6 +79,15 @@
           $color-platinum,
           $color-dark-blue
         );
+      }
+      &-8 {
+        @include ceramicCardsBack();
+      }
+      &-9 {
+        @include ceramicCardsBack();
+      }
+      &-10 {
+        @include ceramicCardsBack();
       }
     }
   }
@@ -190,6 +199,42 @@
       //Edge fallback
       background-image: url(../assets/images/bmw4.jpg);
     }
+
+    &--8 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/lambo3.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/lambo3.jpg);
+    }
+
+    &--9 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/lambo1.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/lambo1.jpg);
+    }
+
+    &--10 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-platinum,
+          $color-black
+        ),
+        url(../assets/images/lambo2.jpg);
+
+      //Edge fallback
+      background-image: url(../assets/images/lambo2.jpg);
+    }
   }
 
   &__heading {
@@ -261,6 +306,28 @@
         rgba($color-dark-blue, 0.85)
       );
     }
+
+    &--8 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-gold, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
+    &--9 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-gold, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
+    &--10 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-gold, 0.85),
+        rgba($color-white, 0.85)
+      );
+    }
   }
 
   &__heading-text {
@@ -280,6 +347,19 @@
     flex-direction: column;
     margin-top: 10rem;
     height: 73%;
+
+    &--8 {
+      @include ceramicCards();
+    }
+
+    &--9 {
+      @include ceramicCards();
+    }
+
+    &--10 {
+      @include ceramicCards();
+    }
+
     &-heading {
       font-size: 1.7rem;
       margin-bottom: 1rem;
@@ -302,10 +382,7 @@
 
     &-cta {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
+      @include flexColHorVer(flex, column, flex-end, center);
       display: none;
 
       @include respond(tab-land) {
@@ -318,10 +395,7 @@
 
   //BACK SIDE STYLING
   &__cta {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexColHorVer(flex, column, center, center);
     height: 100%;
   }
 

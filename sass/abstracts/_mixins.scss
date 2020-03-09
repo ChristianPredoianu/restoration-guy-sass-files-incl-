@@ -1,3 +1,52 @@
+//Primary heading main
+@mixin headingMain() {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  width: 100%;
+  animation: moveInRight 1s ease-in;
+}
+
+@mixin flexColHorVer($display, $direction, $horizontalDir, $verticalDir) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $horizontalDir;
+  align-items: $verticalDir;
+}
+
+@mixin ceramicCards() {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10rem;
+  height: 73%;
+
+  ul {
+    list-style: none;
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+  li {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 3rem 0 2rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-secondary;
+    }
+  }
+}
+
+@mixin ceramicCardsBack() {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-gold,
+    $color-gray-dark
+  );
+}
+
 // MEDIA QUERY MANAGER
 /*
 0-600px:      Phone
